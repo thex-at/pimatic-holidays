@@ -69,10 +69,12 @@ module.exports = (env) ->
       dh = new dateholidays(@country, @state)  
       # check if date is a holiday while respecting timezones
       today = new Date  
-      if @debug is true then env.logger.info("today", today)
+      if @debug is true then env.logger.info("actualdate", today.toString() )
       istodayholiday = dh.isHoliday(today.getDate())
       # fakedate for testing
-      #istodayholiday = dh.isHoliday(new Date('2017-12-24 03:55:00 GMT+0100')) 
+      #istodayholiday = dh.isHoliday(new Date('2017-12-24 23:55:00 GMT+0100'))
+      # list all holidays of the year      
+      #env.logger.info("holidays", dh.getHolidays(2017))
       if @debug is true then env.logger.info("istodayholiday:", istodayholiday)
       if istodayholiday == false then value = false else value = true 
       if @debug is true then env.logger.info("presencevalue:", value)

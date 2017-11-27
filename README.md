@@ -6,3 +6,6 @@ shows if the current day is a holiday or not.
 
 It's using "date-holiday" to get the information.
 https://www.npmjs.com/package/date-holidays
+
+Set country and state variables according to the list on date-holiday's site...
+
