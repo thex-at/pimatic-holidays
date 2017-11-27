@@ -1,0 +1,25 @@
+{ "name": "pimatic-holidays",
+  "description": "The plugin description - holiday variable",
+  "author": "Stephan Amann <stephan.amann@thex.at> (http://www.thex.at)",
+  "main": "holidays.coffee",
+  "files": [
+    "holidays.coffee",
+    "README.md",
+    "holidays-config-schema.coffee",
+    "device-config-schema.coffee"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://www.thex.at/pimatic",
+  "private": true,
+  "configSchema": "holidays-config-schema.coffee",
+  "dependencies": {
+    "date-holidays": "1.2.0"
+  },
+  "peerDependencies": {
+    "pimatic": ">=0.8.0 <1.0.0"
+  },
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  }
+}
