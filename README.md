@@ -15,3 +15,14 @@ Set country and state variables according to the list on date-holiday's site...
 
 As its my first step into coffescript and writing pimatic-plugins it still has lots of errors.
 But anyway, so far it seems to work and i'm trying to fix the issues...
+
+
+Installation:
+ - clone from github
+ - run npm install in plugin dir to install dependencies (need fix this...)
+ - add and enable plugin in config.json:
+     {
+      "plugin": "holidays",
+      "active": true
+    }
+ - create a "HolidaySensor" device to get the needed variable
