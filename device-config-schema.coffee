@@ -16,5 +16,10 @@ module.exports = {
         type: "string"
         default: "8"
         required: true
+      debug:
+        description: "true for debug outpout"
+        type: "boolean"
+        default: false
+        required: true
   }
 }

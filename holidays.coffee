@@ -45,6 +45,7 @@ module.exports = (env) ->
       @id = @config.id
       @country = @config.country ? @plugin.config.country
       @state = @config.state ? @plugin.config.state
+      @debug = @config.debug ? @plugin.config.debug
       @_presence = false
       # ...
 
@@ -62,18 +63,19 @@ module.exports = (env) ->
         labels: ['Holiday', 'noHoliday']
         
     _setPresence: (value) ->
-      env.logger.info("country", @country)
-      env.logger.info("state", @state)
+      if @debug is true then env.logger.info("debug", @debug)
+      if @debug is true then env.logger.info("country", @country)
+      if @debug is true then env.logger.info("state", @state)
       dh = new dateholidays(@country, @state)  
       # check if date is a holiday while respecting timezones
       today = new Date  
-      env.logger.info("today", today)
+      if @debug is true then env.logger.info("today", today)
       istodayholiday = dh.isHoliday(today.getDate())
       # fakedate for testing
       #istodayholiday = dh.isHoliday(new Date('2017-12-24 03:55:00 GMT+0100')) 
-      env.logger.info("istodayholiday:", istodayholiday)
+      if @debug is true then env.logger.info("istodayholiday:", istodayholiday)
       if istodayholiday == false then value = false else value = true 
-      env.logger.info("sensorvalue:", value)
+      if @debug is true then env.logger.info("presencevalue:", value)
       if @_presence is value then return
       @_presence = value
       @emit 'presence', value
