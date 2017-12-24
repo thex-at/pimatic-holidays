@@ -7,12 +7,12 @@ module.exports = {
     extensions: ["xLink"]
     properties:
       country:
-        description: "the country - AT"
+        description: "the country"
         type: "string"
         default: "AT"
         required: true
       state:
-        description: "the bundesland - 8"
+        description: "the state"
         type: "string"
         default: "8"
         required: true
