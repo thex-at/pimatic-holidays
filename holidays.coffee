@@ -88,12 +88,12 @@ module.exports = (env) ->
       @_holidayname = 'none'
       if istodayholiday then @_holidayname = istodayholiday["name"]
       @emit 'holidayname', @_holidayname
-      env.logger.info("holidayname variable:", @_holidayname)
+      if @debug is true then env.logger.info("holidayname variable:", @_holidayname)
 
       @_holidaytype = "none"
       if istodayholiday then @_holidaytype = istodayholiday["type"]
       @emit 'holidaytype', @_holidaytype
-      env.logger.info("holidaytype variable:", @_holidaytype)
+      if @debug is true then env.logger.info("holidaytype variable:", @_holidaytype)
       
       if @debug is true then env.logger.info("istodayholiday:", istodayholiday)
       if istodayholiday == false then value = false else value = true 
